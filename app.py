@@ -108,6 +108,17 @@ def store_weather_data():
         "file_name": file_name
     }), 201
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({
+        "message": "Welcome to the Historical Weather Data API 🌤️",
+        "endpoints": {
+            "POST /store-weather-data": "Fetch and store weather data in GCS",
+            "GET /list-weather-files": "List stored weather data files",
+            "GET /weather-file-content/file_name": "Retrieve content of a specific file"
+        }
+    }), 200
+
 @app.route('/list-weather-files', methods=['GET'])
 def list_weather_files():
     """Lists all weather data files stored in the GCS bucket."""

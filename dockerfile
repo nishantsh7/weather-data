@@ -11,7 +11,7 @@ WORKDIR /app
 ENV PORT 8080
 # You MUST set this environment variable during deployment on Cloud Run
 # to the name of your GCS bucket.
-ENV GCS_BUCKET_NAME your-gcs-bucket-name
+ENV GCS_BUCKET_NAME inrisk_weather_data
 
 # --- System Dependencies ---
 # Install any needed system packages
